@@ -20,9 +20,19 @@ do
 done
 
 # Criar grupos
-for i in "${grupos}"
+for i in "${grupos[@]}"
 do
-	echo "Criando grupo $1 ..."
-	groupadd "$1"
+	echo "Criando grupo $i ..."
+	groupadd "$i"
 done
+
+# Atribuir grupo aos usuários
+echo "Adicionando usuários os grupo ADM ..."
+eval 'usermod -G GRP_ADM '{carlos,maria,joao}';'
+
+echo "Adicionando usuários os grupo VEN ..."
+eval 'usermod -G GRP_VEN '{debora,sebastiana,roberto}';'
+
+echo "Adicionando usuários os grupo SEC ..."
+eval 'usermod -G GRP_SEC '{josefina,amanda,rogerio}';'
 
