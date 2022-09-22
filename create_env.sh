@@ -36,3 +36,19 @@ eval 'usermod -G GRP_VEN '{debora,sebastiana,roberto}';'
 echo "Adicionando usuários os grupo SEC ..."
 eval 'usermod -G GRP_SEC '{josefina,amanda,rogerio}';'
 
+# Adicionar permissões às pastas
+
+#Pasta publico
+chmod 777 /publico
+
+#Pasta adm
+chown root:GRP_ADM /adm
+chmod 770 /adm
+
+#Pasta ven
+chown root:GRP_VEN /ven
+chmod 770 /ven
+
+#Pasta sec
+chown root:GRP_SEC /sec
+chmod 770 /sec
