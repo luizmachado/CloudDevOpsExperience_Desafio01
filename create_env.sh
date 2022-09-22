@@ -19,4 +19,10 @@ do
 	mkdir /"$i"
 done
 
+# Criar grupos
+for i in "${grupos}"
+do
+	echo "Criando grupo $1 ..."
+	groupadd "$1"
+done
 
